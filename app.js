@@ -19,6 +19,11 @@ app.get("/homeAutomation", function(req, res) {
 
 app.post("/homeAutomation/register", function(req, res) {
   try {
+    console.log("req.url:", req.url);
+    let valid = validation(req.body);
+    if (!valid[0]) {
+      return res.json({ success: 0, message: valid[1] });
+    }
     userModule.addUser({ email: req.body.email }, function(result) {
       return res.json(result);
     });
@@ -30,6 +35,10 @@ app.post("/homeAutomation/register", function(req, res) {
 
 app.post("/homeAutomation/login", function(req, res) {
   console.log("req.url:", req.url);
+  let valid = validation(req.body);
+  if (!valid[0]) {
+    return res.json({ success: 0, message: valid[1] });
+  }
   userModule.getUser(req.body, function(result) {
     let dbEmail = "";
     let dbPassword = "";
@@ -104,6 +113,16 @@ app.use(function(req, res, next) {
 
 homeAutomation.configure(app);
 
-var server = app.listen(7005, function() {
+let server = app.listen(7005, function() {
   console.log("Listening on port " + server.address().port);
 });
+
+let validation = body => {
+  if (!body.hasOwnProperty("email")) {
+    return [false, "email is required"];
+  }
+  if (!body.hasOwnProperty("password")) {
+    return [false, "password is required"];
+  }
+  return [true, "ok"];
+};
