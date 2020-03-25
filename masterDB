@@ -1,0 +1,14 @@
+CREATE KEYSPACE home_automation WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+CREATE TABLE home_automation.user (
+    user_id timeuuid PRIMARY KEY,
+    created_at timestamp,
+    email text,
+    gender text,
+    image text,
+    mobile_no text,
+    password text,
+    status int,
+    updated_at timestamp,
+    user_name text
+);
