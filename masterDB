@@ -12,3 +12,16 @@ CREATE TABLE home_automation.user (
     updated_at timestamp,
     user_name text
 );
+
+CREATE TABLE home_automation.device (
+    user_id timeuuid,
+    id timeuuid,
+    created_at timestamp,
+    description text,
+    last_connected timestamp,
+    mac_id text,
+    status int,
+    switch_status int,
+    user_info map<text, text>,
+    PRIMARY KEY (user_id, id, created_at)
+) WITH CLUSTERING ORDER BY (id DESC, created_at DESC);
