@@ -3,6 +3,9 @@ const userModule = require("../modules/user.module");
 const deviceModule = require("../modules/device.module");
 module.exports = {
   configure(app) {
+    /**
+     * API for getting information of user
+     */
     app.get("/homeAutomation/getUser", function(req, res) {
       try {
         userModule.getUser(req.decoded, function(result) {
@@ -13,6 +16,9 @@ module.exports = {
         return res.json(failJson);
       }
     });
+    /**
+     * API for getting list of devices of the user
+     */
     app.get("/homeAutomation/getDevices", function(req, res) {
       try {
         deviceModule.getDevices(req.decoded.user_id, function(result) {
@@ -23,6 +29,9 @@ module.exports = {
         return res.json(failJson);
       }
     });
+    /**
+     * API for adding device of the user
+     */
     app.post("/homeAutomation/addDevice", function(req, res) {
       try {
         if (!req.body.hasOwnProperty("mac_id")) {
@@ -37,6 +46,9 @@ module.exports = {
         return res.json(failJson);
       }
     });
+    /**
+     * API for ON or OFF the device
+     */
     app.put("/homeAutomation/deviceSwitch", function(req, res) {
       try {
         if (!req.body.hasOwnProperty("switch_status")) {
@@ -57,6 +69,9 @@ module.exports = {
         return res.json(failJson);
       }
     });
+    /**
+     * API for deleting the device
+     */
     app.delete("/homeAutomation/deleteDevice", function(req, res) {
       try {
         if (!req.body.hasOwnProperty("id")) {

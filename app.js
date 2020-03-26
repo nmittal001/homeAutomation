@@ -13,10 +13,17 @@ app.use(cors());
 app.use(bodyparser.json());
 db.configure();
 
+/**
+ * API testing
+ */
 app.get("/homeAutomation", function(req, res) {
+  console.log("req.url:", req.url);
   return res.json({ success: 1, message: "homeAutomation API is working" });
 });
 
+/**
+ * API for signup
+ */
 app.post("/homeAutomation/register", function(req, res) {
   try {
     console.log("req.url:", req.url);
@@ -33,6 +40,9 @@ app.post("/homeAutomation/register", function(req, res) {
   }
 });
 
+/**
+ * API for login
+ */
 app.post("/homeAutomation/login", function(req, res) {
   console.log("req.url:", req.url);
   let valid = validation(req.body);
@@ -117,6 +127,10 @@ let server = app.listen(7005, function() {
   console.log("Listening on port " + server.address().port);
 });
 
+/**
+ * function for validation
+ * @param {JSON} body
+ */
 let validation = body => {
   if (!body.hasOwnProperty("email")) {
     return [false, "email is required"];
