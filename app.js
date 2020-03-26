@@ -24,7 +24,7 @@ app.post("/homeAutomation/register", function(req, res) {
     if (!valid[0]) {
       return res.json({ success: 0, message: valid[1] });
     }
-    userModule.addUser({ email: req.body.email }, function(result) {
+    userModule.addUser(req.body, function(result) {
       return res.json(result);
     });
   } catch (err) {

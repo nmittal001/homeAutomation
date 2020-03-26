@@ -25,7 +25,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:7005/homeAutomation/register",
+					"raw": "http://localhost:7005/homeAutomation/register",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -58,7 +59,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:7005/homeAutomation/login",
+					"raw": "http://localhost:7005/homeAutomation/login",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -84,12 +86,13 @@
 					},
 					{
 						"key": "x-access-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is",
+						"value": "you will get token from the login API",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:7005/homeAutomation/getUser",
+					"raw": "http://localhost:7005/homeAutomation/getUser",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -97,37 +100,6 @@
 					"path": [
 						"homeAutomation",
 						"getUser"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET DEVICES",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "x-access-token",
-						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
-					}
-				],
-				"url": {
-					"raw": "localhost:7005/homeAutomation/getDevices",
-					"host": [
-						"localhost"
-					],
-					"port": "7005",
-					"path": [
-						"homeAutomation",
-						"getDevices"
 					]
 				}
 			},
@@ -147,7 +119,7 @@
 					{
 						"key": "x-access-token",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+						"value": "you will get token from the login API"
 					}
 				],
 				"body": {
@@ -160,7 +132,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:7005/homeAutomation/addDevice",
+					"raw": "http://localhost:7005/homeAutomation/addDevice",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -168,6 +141,38 @@
 					"path": [
 						"homeAutomation",
 						"addDevice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DEVICES",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "you will get token from the login API"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7005/homeAutomation/getDevices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"getDevices"
 					]
 				}
 			},
@@ -187,7 +192,7 @@
 					{
 						"key": "x-access-token",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+						"value": "you will get token from the login API"
 					}
 				],
 				"body": {
@@ -200,16 +205,18 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:7005/homeAutomation/DeviceSwitch",
+					"raw": "http://localhost:7005/homeAutomation/deviceSwitch",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "7005",
 					"path": [
 						"homeAutomation",
-						"DeviceSwitch"
+						"deviceSwitch"
 					]
-				}
+				},
+				"description": "the value of switch_status can be 0 or 1"
 			},
 			"response": []
 		},
@@ -227,7 +234,7 @@
 					{
 						"key": "x-access-token",
 						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+						"value": "you will get token from the login API"
 					}
 				],
 				"body": {
@@ -240,7 +247,8 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:7005/homeAutomation/deleteDevice",
+					"raw": "http://localhost:7005/homeAutomation/deleteDevice",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],

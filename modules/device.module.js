@@ -19,7 +19,7 @@ var deviceModule = {
         .addDevice(body)
         .then(function(value) {
           if (value) {
-            callback({ success: 1, message: "Device add successfully" });
+            callback({ success: 1, message: "Device added successfully" });
           } else {
             callback({ success: 0, message: "Fail to add Device details" });
           }

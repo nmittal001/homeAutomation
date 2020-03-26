@@ -5,7 +5,7 @@ var userModule = {
       .getUser(body)
       .then(function(results) {
         if (results.rows.length > 0)
-          callback({ success: 1, data: results.rows[0] });
+          callback({ success: 1, data: results.rows });
         else callback({ success: 1, data: [] });
       })
       .catch(function(err) {
@@ -14,13 +14,13 @@ var userModule = {
       });
   },
   addUser: function(body, callback) {
-    getUser = userModel.getUser(body).then(function(value) {
+    getUser = userModel.getUser(body, false).then(function(value) {
       if (value && value.rows.length == 0) {
         userModel
           .addUser(body)
           .then(function(value) {
             if (value) {
-              callback({ success: 1, message: "User add successfully" });
+              callback({ success: 1, message: "User added successfully" });
             } else {
               callback({ success: 0, message: "Fail to add user details" });
             }

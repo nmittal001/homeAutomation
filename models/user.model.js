@@ -2,14 +2,14 @@ var db = require("../lib/db.js");
 var constants = require("../config/constants");
 
 var userModel = {
-  getUser: function(body) {
+  getUser: function(body, ifRegister = true) {
     let qry;
     if (body.hasOwnProperty("user_id")) {
       qry = ` WHERE user_id = ${body.user_id} `;
     } else {
       qry = ` WHERE email = '${body.email}' `;
     }
-    if (body.hasOwnProperty("password")) {
+    if (ifRegister && body.hasOwnProperty("password")) {
       qry += ` AND password = '${body.password}'`;
     }
     qry += ` AND status = 1 ALLOW FILTERING`;
