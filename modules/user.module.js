@@ -5,7 +5,7 @@ var userModule = {
       .getUser(body)
       .then(function(results) {
         if (results.rows.length > 0)
-          callback({ success: 1, data: results.rows });
+          callback({ success: 1, data: results.rows[0] });
         else callback({ success: 1, data: [] });
       })
       .catch(function(err) {

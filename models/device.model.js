@@ -29,7 +29,7 @@ var deviceModel = {
     });
   },
   deviceSwitch: function(body) {
-    let query = `UPDATE ${constants.TABLES.DEVICE} SET switch_status = ? WHERE user_id =? AND id =? AND created_at =?`;
+    let query = `UPDATE ${constants.TABLES.DEVICE} SET switch_status = ?, last_connected = dateof(now())  WHERE user_id =? AND id =? AND created_at =?`;
     return db.queryPromise(
       query,
       [body.switch_status, body.user_id, body.id, body.created_at],
@@ -39,7 +39,7 @@ var deviceModel = {
     );
   },
   deleteDevice: function(body) {
-    let query = `UPDATE ${constants.TABLES.DEVICE} SET status = 0 WHERE user_id =? AND id =? AND created_at =?`;
+    let query = `UPDATE ${constants.TABLES.DEVICE} SET status = 0, last_connected = dateof(now()) WHERE user_id =? AND id =? AND created_at =?`;
     return db.queryPromise(query, [body.user_id, body.id, body.created_at], {
       prepare: true
     });
