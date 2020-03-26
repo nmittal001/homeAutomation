@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "fa233662-e088-4ef4-a17f-f83046a19223",
+		"name": "Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"HomeAutomation\",\n    \"password\": \"homePassword\",\n    \"email\": \"homeAutomation@gmail.com\",\n    \"gender\":\"male\",\n    \"mobile_no\":\"9706323888\",\n    \"image\":\"https://en.wikipedia.org/wiki/Home_automation#/media/File:Raumbedienger%C3%A4t.jpg\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "localhost:7005/homeAutomation/register",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"homeAutomation@gmail.com\",\n    \"password\": \"homePassword\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "localhost:7005/homeAutomation/login",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET USER",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7005/homeAutomation/getUser",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"getUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DEVICES",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+					}
+				],
+				"url": {
+					"raw": "localhost:7005/homeAutomation/getDevices",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"getDevices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD DEVICE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\":\"Description About Device\",\n\t\"mac_id\": \"01-23-45-67-89-AB-CD-EF\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7005/homeAutomation/addDevice",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"addDevice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PERFORM ON DEVICE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"switch_status\": 0,\n\t\"id\": \"Paste id of device X, you will get from /getDevice API\",\n\t\"created_at\": \"Paste created_at of device X, you will get from /getDevice API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7005/homeAutomation/DeviceSwitch",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"DeviceSwitch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE DEVICE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmphbkBlbWFpbC5jb20iLCJ1c2VyX2lkIjoiMWFiNjhmZjAtNmU4MS0xMWVhLWFjYWUtYmQxM2EyZGFiM2RkIiwiaWF0IjoxNTg1MTk0NzE2LCJleHAiOjE1ODUyMzc5MTZ9.J1-zRUn0mTHHcOwTQXoO4chkEMiA2fEg3m3CPWiK4is"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"Paste id of device X, you will get from /getDevice API\",\n\t\"created_at\": \"Paste created_at of device X, you will get from /getDevice API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7005/homeAutomation/deleteDevice",
+					"host": [
+						"localhost"
+					],
+					"port": "7005",
+					"path": [
+						"homeAutomation",
+						"deleteDevice"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
